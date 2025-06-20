@@ -1,0 +1,128 @@
+:root {
+  --color-primary-blue: #00aeef;
+  --color-primary-blue-hover: #009cdb; /* Slightly darker for hover on primary interactive elements */
+  --color-primary-blue-focus-ring: #00aeef80; /* For focus rings, often semi-transparent */
+  
+  --color-dark-bg: #161616;
+  --color-white: #ffffff;
+
+  /* Light Theme */
+  --color-light-bg: #f3f4f6; /* gray-100 */
+  --color-light-card-bg: #ffffff;
+  --color-light-text-primary: #1f2937; /* gray-800 */
+  --color-light-text-secondary: #6b7280; /* gray-500 */
+  --color-light-border: #e5e7eb; /* gray-200 */
+  --color-light-sidebar-bg: #ffffff;
+  --color-light-header-bg: #ffffff;
+  --color-light-modal-bg: #ffffff;
+  --color-light-input-bg: #ffffff;
+  --color-light-input-border: #d1d5db; /* gray-300 */
+  --color-light-placeholder: #9ca3af; /* gray-400 */
+  --color-light-button-secondary-bg: #ffffff;
+  --color-light-button-secondary-text: #374151; /* gray-700 */
+  --color-light-button-secondary-border: #d1d5db; /* gray-300 */
+  --color-light-button-secondary-hover-bg: #f9fafb; /* gray-50 */
+  --color-light-link-hover: #0077b3; /* Darker blue for link hovers specifically */
+
+
+  /* Dark Theme */
+  --color-dark-main-bg: #161616; /* Main body background */
+  --color-dark-card-bg: #202020; /* Slightly lighter than main bg for cards, modals */
+  --color-dark-sidebar-bg: #1a1a1a;
+  --color-dark-header-bg: #1a1a1a;
+  --color-dark-modal-bg: #27272a; /* zinc-800 */
+  --color-dark-text-primary: #f4f4f5; /* zinc-100 / almost white */
+  --color-dark-text-secondary: #a1a1aa; /* zinc-400 / light gray */
+  --color-dark-border: #3f3f46; /* zinc-700 / darker gray for borders */
+  --color-dark-input-bg: #3f3f46; /* zinc-700 */
+  --color-dark-input-border: #52525b; /* zinc-600 */
+  --color-dark-placeholder: #71717a; /* zinc-500 */
+  --color-dark-button-secondary-bg: #3f3f46; /* zinc-700 */
+  --color-dark-button-secondary-text: #f4f4f5; /* zinc-100 */
+  --color-dark-button-secondary-border: #52525b; /* zinc-600 */
+  --color-dark-button-secondary-hover-bg: #52525b; /* zinc-600 */
+  --color-dark-link-hover: #38bdf8; /* Lighter blue for dark link hovers */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-light-bg);
+  color: var(--color-light-text-primary);
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+html.dark body {
+  background-color: var(--color-dark-main-bg);
+  color: var(--color-dark-text-primary);
+}
+
+/* Custom scrollbar for webkit browsers - global style */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-light-border);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-light-text-secondary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #2d2d2d; 
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border); 
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-dark-text-secondary);
+}
+
+/* Utility to hide scrollbars */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  scrollbar-width: none;  /* For Firefox */
+}
+
+
+/* Base link styles */
+a {
+  color: var(--color-primary-blue);
+  text-decoration: none; /* Optional: common practice */
+}
+a:hover {
+  color: var(--color-light-link-hover);
+}
+
+html.dark a:hover {
+  color: var(--color-dark-link-hover);
+}
+
+/* Generic button focus style improvement for dark mode */
+html.dark button:focus-visible, html.dark input[type="button"]:focus-visible, html.dark input[type="submit"]:focus-visible {
+  outline: 2px solid var(--color-primary-blue-focus-ring);
+  outline-offset: 2px;
+}
+
+html.dark select:focus-visible, html.dark input:focus-visible, html.dark textarea:focus-visible {
+   outline: 2px solid var(--color-primary-blue-focus-ring) !important; /* Important may be needed to override tailwind defaults */
+   outline-offset: 1px !important;
+}
+
+/* Ensure consistent focus rings */
+*:focus-visible {
+  outline: 2px solid var(--color-primary-blue-focus-ring);
+  outline-offset: 2px;
+}
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+   border-color: var(--color-primary-blue) !important; /* Ensure border color changes on focus */
+}

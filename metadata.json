@@ -1,0 +1,6 @@
+{
+  "name": "MRX United Status Admin Dashboard",
+  "description": "A modern, intuitive status dashboard for MRX United, tailored for internal administrative use. Displays real-time system status, user activity, service uptime, and error reports.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
