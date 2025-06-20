@@ -3,9 +3,9 @@ import { AppwriteConfig, SiteIdentitySettings, DiscordSettings } from './types';
 // Widget Component imports are removed from here. They are now in config/widgetRegistry.ts
 
 export const APPWRITE_CONFIG: AppwriteConfig = {
-  endpoint: 'https://fra.cloud.appwrite.io/v1', // e.g., 'https://cloud.appwrite.io/v1'
-  projectId: '6853d52f003a46af3569',
-  databaseId: 'mrx_status_data',
+  endpoint: 'YOUR_APPWRITE_ENDPOINT', // e.g., 'https://cloud.appwrite.io/v1'
+  projectId: 'YOUR_APPWRITE_PROJECT_ID',
+  databaseId: 'YOUR_APPWRITE_DATABASE_ID',
 
   // Admin dashboard internal collections
   systemStatusCollectionId: 'internal_system_status',
